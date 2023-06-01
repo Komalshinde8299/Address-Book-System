@@ -2,72 +2,72 @@ package com.first.address;
 
 import java.util.Scanner;
 
-public class AddressBookMain implements IAddressMethods{
+public class AddressBookMain{
+
     public static void main(String[] args) {
         System.out.println("* Welcome to Address Book Program ");
 
-        AddressBookMain addressBookMain = new AddressBookMain();
-        addressBookMain.addContacts();
 
-    }
-    @Override
-    public void addContacts() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter your first name");
-        String firstName = scanner.nextLine();
-        Contact obj = new Contact();
-        obj.setFirstName(firstName);
+        System.out.println("Enter no of contacts you want to add ");
 
-        System.out.println("Enter your last name");
-        String lastName = scanner.nextLine();
-        obj.setLastName(lastName);
-
-        System.out.println("Enter your full address");
-        String address = scanner.nextLine();
-        obj.setAddress(address);
-
-        System.out.println("Enter your City");
-        String city = scanner.nextLine();
-        obj.setCity(city);
-
-        System.out.println("Enter your State");
-        String state = scanner.nextLine();
-        obj.setState(state);
-
-        System.out.println("Enter your Zip");
-        int zipCode = scanner.nextInt();
-        obj.setZipCode(zipCode);
+        int no = scanner.nextInt();
+        AddressBook addressBook = new AddressBook(no);
         scanner.nextLine();
 
-        System.out.println("Enter your Phone No");
-        String phoneNo = scanner.nextLine();
-        obj.setPhoneNo(phoneNo);
+        for (int i = 0; i < no; i++) {
+            Contact obj = new Contact();
 
-        System.out.println("Enter your Email");
-        String email = scanner.nextLine();
-        obj.setPhoneNo(email);
 
-        System.out.println("Enter 1 if you want to see which details you have added");
-        int check = scanner.nextInt();
-        if(check == 1){
-            System.out.println(obj.getFirstName());
-            System.out.println(obj.getLastName());
-            System.out.println(obj.getAddress());
-            System.out.println(obj.getCity());
-            System.out.println(obj.getState());
-            System.out.println(obj.getZipCode());
-            System.out.println(obj.getPhoneNo());
-            System.out.println(obj.getEmail());
-            System.out.println("Thank you for adding information");
+            System.out.println("Enter your first name");
+            String firstName = scanner.nextLine();
 
-        } else {
-            System.out.println("Thank you for adding information");
+            obj.setFirstName(firstName);
+
+            System.out.println("Enter your last name");
+            String lastName = scanner.nextLine();
+            obj.setLastName(lastName);
+
+            System.out.println("Enter your full address");
+            String address = scanner.nextLine();
+            obj.setAddress(address);
+
+            System.out.println("Enter your City");
+            String city = scanner.nextLine();
+            obj.setCity(city);
+
+            System.out.println("Enter your State");
+            String state = scanner.nextLine();
+            obj.setState(state);
+
+            System.out.println("Enter your Zip");
+            int zipCode = scanner.nextInt();
+            obj.setZipCode(zipCode);
+            scanner.nextLine();
+
+            System.out.println("Enter your Phone No");
+            String phoneNo = scanner.nextLine();
+            obj.setPhoneNo(phoneNo);
+
+            System.out.println("Enter your Email");
+            String email = scanner.nextLine();
+            obj.setPhoneNo(email);
+
+            addressBook.addcontacts(obj);
+
         }
 
+        System.out.println("Contacts from address book");
+        addressBook.display();
 
+        System.out.println("\nEnter First Name of contact which you want to edit");
+        String name = scanner.nextLine();
+        addressBook.editDetails(name);
 
 
     }
+
+
 
 
 }

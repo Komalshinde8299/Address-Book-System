@@ -1,10 +1,13 @@
 package com.first.address;
 
 public class Contact {
-    AddressBookMain addressBookMain;
+
+
+
     String firstName;
     String lastName;
     String address;
+
     String city;
     String state;
     int zipCode;
@@ -75,5 +78,19 @@ public class Contact {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", zipCode=" + zipCode +
+                ", phoneNo='" + phoneNo + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }

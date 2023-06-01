@@ -2,7 +2,7 @@ package com.first.address;
 
 public interface IAddressMethods {
 
-    void addContacts();
-
-    //void getContacts();
+    void addcontacts(Contact contact);
+    void display();
+    void editDetails(String firstName);
 }
