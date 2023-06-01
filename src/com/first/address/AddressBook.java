@@ -76,6 +76,8 @@ public class AddressBook  implements IAddressMethods {
                 contactArray[i].setPhoneNo(email);
 
 
+            } else{
+                System.out.println("Contact not found in address book");
             }
 
 
