@@ -60,9 +60,11 @@ public class AddressBookMain{
         System.out.println("Contacts from address book");
         addressBook.display();
 
-        System.out.println("\nEnter First Name of contact which you want to edit");
+        System.out.println("\nEnter First Name of contact which you want to remove");
         String name = scanner.nextLine();
-        addressBook.editDetails(name);
+//        addressBook.editDetails(name);
+        addressBook.removeContact(name);
+        addressBook.display();
 
 
     }

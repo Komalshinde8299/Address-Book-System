@@ -36,8 +36,8 @@ public class AddressBook  implements IAddressMethods {
     @Override
     public void editDetails(String name) {
         boolean contactFound = false;
-        for(int i = 0; i < num; i++){
-            if(contactArray[i].getFirstName().equalsIgnoreCase(name)){
+        for (int i = 0; i < num; i++) {
+            if (contactArray[i].getFirstName().equalsIgnoreCase(name)) {
                 contactFound = true;
 
                 Scanner scanner = new Scanner(System.in);
@@ -76,15 +76,25 @@ public class AddressBook  implements IAddressMethods {
                 contactArray[i].setPhoneNo(email);
 
 
-            } else{
+            } else {
                 System.out.println("Contact not found in address book");
+            }
+        }
+    }
+    @Override
+    public void removeContact(String firstName) {
+        for (int i = 0; i < num; i++) {
+            if (contactArray[i].getFirstName().equalsIgnoreCase(firstName)) {
+                contactArray[i] = contactArray[num - 1];
+                contactArray[num - 1 ] = null;
+                num--;
+                System.out.println("Contact removed successfully");
+
+            } else{
+                System.out.println("Contact not found");
             }
 
 
 
-
-        }
-
-
     }
-}
+}}
