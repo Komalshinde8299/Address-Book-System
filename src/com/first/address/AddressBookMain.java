@@ -9,6 +9,7 @@ public class AddressBookMain{
 
 
         Scanner scanner = new Scanner(System.in);
+        System.out.println("For storing multiple contacts in address book");
         System.out.println("Enter no of contacts you want to add ");
 
         int no = scanner.nextInt();
@@ -60,11 +61,11 @@ public class AddressBookMain{
         System.out.println("Contacts from address book");
         addressBook.display();
 
-        System.out.println("\nEnter First Name of contact which you want to remove");
-        String name = scanner.nextLine();
+//        System.out.println("\nEnter First Name of contact which you want to remove");
+//        String name = scanner.nextLine();
 //        addressBook.editDetails(name);
-        addressBook.removeContact(name);
-        addressBook.display();
+//        addressBook.removeContact(name);
+//        addressBook.display();
 
 
     }
